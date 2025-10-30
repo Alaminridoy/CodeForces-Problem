@@ -13,10 +13,18 @@ void sol()
     vector<int> v(n);
     for (int i = 0; i < n; i++) cin >> v[i];
 
-    int smallest = *min_element(v.begin(), v.end());
-
-    
-
+    for (int i = 2; i <= 200; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            if(__gcd(v[j],i)==1) {
+                cout<<i<<nl;
+                return;
+            }
+        }
+        
+    }
+    cout<<-1<<nl;
 }
 signed main()
 {
